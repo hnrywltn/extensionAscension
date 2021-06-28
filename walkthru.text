@@ -42,6 +42,19 @@ made model associations
     //import bcrypt
     //import our db
 
+//create userValidator array to use in the user regsitration POST route
+
+//POST route
+    //needs to use asyncHandler and be an async function
+    //destructure from the req.body
+    //build a user object
+    //create an errors array
+    //if errors array is empty, hash the password and add user to the db
+    //if errors array contains errors, display the errors on the user-register page
+        //pass the title, user object, errors array, and csrfToken to the pug file
+
+//Update the pug file to include the errors array so registration errors can be rendered on the page
+
 
 //////////////////////////
 
