@@ -1,0 +1,28 @@
+
+create user and DB
+CREATE USER ea_app WITH PASSWORD 'password' CREATEDB;
+CREATE DATABASE ea WITH OWNER ea_app;
+
+
+
+create models and migrations
+_____________________________________
+User
+npx sequelize-cli model:generate --name User --attributes name:string,userName:string,email:string,password:string,productId:integer,profileImg:string,bio:text
+
+Comment
+npx sequelize-cli model:generate --name Comment --attributes productId:integer,userId:integer,body:text
+
+Product
+npx sequelize-cli model:generate --name Product --attributes name:string,comments:string,imgUrl:string,productUrl:string,categoryId:integer,creatorName:string,description:text,userId:integer
+
+Category
+npx sequelize-cli model:generate --name Category --attributes name:string
+
+
+
+migrate
+npx dotenv sequelize db:migrate
+
+seed
+npx dotenv sequelize db:seed:all
