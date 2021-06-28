@@ -5,12 +5,16 @@ module.exports = (sequelize, DataTypes) => {
     userName: DataTypes.STRING,
     email: DataTypes.STRING,
     password: DataTypes.STRING,
-    productId: DataTypes.INTEGER,
     profileImg: DataTypes.STRING,
     bio: DataTypes.TEXT
   }, {});
   User.associate = function(models) {
-    // associations can be defined here
+    User.hasMany(models.Product, {
+      foreignKey: 'userId'
+    })
+    User.hasMany(models.Comments, {
+      foreignKey: 'userId'
+    })
   };
   return User;
 };
