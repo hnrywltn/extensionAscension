@@ -24,5 +24,33 @@ npx sequelize-cli model:generate --name Category --attributes name:string
 migrate
 npx dotenv sequelize db:migrate
 
+set up migration files in correct order
+made model associations
+
+////////DAY ONE///////////
+//make utils file
+
+
+//make view files
+    //
+    // user/register path
+    // user/log-in
+    //
+
+
+//implement auth
+    //import bcrypt
+    //import our db
+
+
+//////////////////////////
+
+
+
+
+
+
+
+
 seed
 npx dotenv sequelize db:seed:all
