@@ -12,7 +12,7 @@ module.exports = (sequelize, DataTypes) => {
     User.hasMany(models.Product, {
       foreignKey: 'userId'
     })
-    User.hasMany(models.Comments, {
+    User.hasMany(models.Comment, {
       foreignKey: 'userId'
     })
   };
