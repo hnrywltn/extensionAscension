@@ -128,7 +128,7 @@ router.post('/register', csrfProtection, userValidators, asyncHandler(async(req,
     name,
     userName,
     email,
-    profileImg: profileImg || 'https://thispersondoesnotexist.com/',
+    profileImg: profileImg || 'https://thispersondoesnotexist.com/image',
     bio
   })
 
