@@ -17,9 +17,18 @@ html
         a(href="/products/submit")
       div
         img(src=profileImg, alt="User Photo")
-        select(name="thomas" type="hidden" id="thomas")
-          option(value="/demo") Demo
-          option(value="/register") Register
-          option(value="/log-in") Log-in
-          option(value="/log-out") Log-out
+        div(class="hidden" id="thomas")
+          ul
+            li
+              a(href="/users/demo") Demo
+            li
+              a(href="/users/register") Register
+            li
+              a(href="/users/log-in") Log-in
+            li
+              a(href="/users/log-out") Log-out
+          //- option(value="/users/demo") Demo
+          //- option(value="/users/register") Register
+          //- option(value="/users/log-in") Log-in
+          //- option(value="/users/log-out") Log-out
     block content
