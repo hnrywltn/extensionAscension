@@ -9,9 +9,9 @@ module.exports = {
       Example:
       */
       return queryInterface.bulkInsert('Categories', [
-        { name: 'Format/Linter' },
-        { name: 'Collaboration/Git' },
-        { name: 'Styling' },
+        { name: 'Format/Linter', createdAt: new Date(), updatedAt: new Date() },
+        { name: 'Collaboration/Git', createdAt: new Date(), updatedAt: new Date() },
+        { name: 'Styling', createdAt: new Date(), updatedAt: new Date() },
     ], {});
   },
 
