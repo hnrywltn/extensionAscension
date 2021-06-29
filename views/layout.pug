@@ -5,4 +5,19 @@ html
         title="Express Starter App"
         link(rel='stylesheet' href='/stylesheets/reset.css')
   body
+    nav
+      div
+        a(href="/") Extension Ascension
+          img(src="https://slack-imgs.com/?c=1&o1=ro&url=https%3A%2F%2Flh3.googleusercontent.com%2FgrsFEMjyDfT4nHX8Crx1q83V_Ma-ZNcuU_-OBj2zx4bGk6HhWkAhw2W4_GsCeSxP9ewkp2Vc6er3ZlCWXz4KOg95aAQgBobSWRVFSgBdU-bTW0rmIvCsibQMlVarCFLRt4MkNr_YAg" style='width:100px; height:100px;' alt="ExtensionAscensionICONIMAGE")
+      div
+        form(action="", name="findUE", method="get")
+          input(type="text" id="findUE" name='findUE' placeholder='Search for User or Extension')
+          button(type="submit") Search
+      div
+        img(src=profileImg, alt="User Photo")
+        select(name="thomas" type="hidden" id="thomas")
+          option(value="/demo") Demo
+          option(value="/register") Register
+          option(value="/log-in") Log-in
+          option(value="/log-out") Log-out
     block content

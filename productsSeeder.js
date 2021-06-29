@@ -1,5 +1,7 @@
 'use strict';
 
+//
+
 module.exports = {
   up: async (queryInterface) => {
     const products = await queryInterface.bulkInsert('Products', [

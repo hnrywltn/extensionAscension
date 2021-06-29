@@ -92,6 +92,8 @@ made model associations
 
 //seed the database with our ten selected extensions
 
+//seed user database with user file
+
 //search functionality
 
 ////////Still To Do///////////
@@ -110,11 +112,28 @@ made model associations
 
 //practice presenting! :)
 
+
+??????????MAYBE????????????????
+
+Search Result Drop Down
+
+
+
+
 ////////Presentation Points///////////
 
 
+////////Group 1///////////
 
+seed users
 
+////////Group 2//////
+
+seed products & categories
+
+//////Group andru/////
+
+set up seeder files
 
 
 
