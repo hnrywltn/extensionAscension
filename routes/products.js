@@ -11,10 +11,10 @@ const { check, validationResult } = require('express-validator');
 ///////////////TODO!! ----  grab the userId
 router.get('/submit', csrfProtection, function(req, res, next) {
   console.log(req.session)
-  // const userId = req.session.auth.user
+  const userId = req.session.auth.userId
   res.render('submit-product', {
     title: 'Submit Extension',
-    // userId,
+    userId,
     csrfToken: req.csrfToken(),
   });
 });
@@ -61,7 +61,7 @@ router.post('/submit', csrfProtection, productValidators, asyncHandler(async(req
   const validatorErrors = validationResult(req);
 
   if(validatorErrors.isEmpty()) {
-    const extension = Product.create({
+    const extension = await Product.create({
       productName,
       imgUrl,
       productUrl,
