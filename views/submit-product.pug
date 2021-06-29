@@ -1,0 +1,33 @@
+extends layout.pug
+block content
+            div
+                if errors
+                    div
+                        p The following error(s) occured:
+                        ul
+                            each error in errors
+                                li= error
+
+                form(action='/products/submit' method='post')
+                    input(type='hidden' name='_csrf' value=csrfToken)
+                    div
+                        label(for='productName') Extension Name
+                        input(type='text' id='productName' name='productName' required)
+                    div
+                        label(for='imgUrl') Extension Image URL
+                        input(type='text' id='imgUrl' name='imgUrl')
+                    div
+                        label(for='productUrl') Extension Download URL
+                        input(type='text' id='productUrl' name='productUrl' required)
+                    div
+                        label(for='description') Description
+                        textarea(type='text' id='description' name='description' required)
+                    div
+                        label(for='categoryId') Category
+                        select(name='categoryId' required)
+                          option(value=1) Format / Linter
+                          option(value=2) Collaboration / GIT
+                          option(value=3) Styling / CSS
+                    div
+                        input(type="hidden" id='userId' name='userId' value=userId)
+                    button(type="submit") Submit
