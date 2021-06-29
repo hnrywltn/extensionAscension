@@ -5,7 +5,8 @@ const bcrypt = require('bcryptjs');
 const { User } = require('../db/models');
 const { csrfProtection, asyncHandler } = require('./utils');
 const { check, validationResult } = require('express-validator');
-
+const { ValidationError } = require('sequelize/types');
+const { loginUser, logoutUser } = require('../auth');
 
 //build validations array
 
@@ -14,13 +15,54 @@ const { check, validationResult } = require('express-validator');
 /* GET users listing. */
 
 
-router.get('/users/log-in', function(req, res, next) {
+router.get('/log-in', csrfProtection, function(req, res, next) {
+  res.render('user-login', {
+    title: 'Login',
+    csrfToken: req.csrfToken(),
+  });
 });
 
-router.post('/users/log-in', function(req, res, next) {
-  //render 'home pug'
-  res.send('respond with a resource');
-});
+const loginValidators = [
+  check('email')
+    .exists({ checkFalsy: true })
+    .withMessage('Please provide a value for Email Address'),
+  check('password')
+    .exists({ checkFalsy: true })
+    .withMessage('Please provide a value for Password'),
+];
+
+router.post('/log-in', csrfProtection, loginValidators, asyncHandler(async(req, res, next) => {
+  const {
+    email,
+    password
+  } = req.body;
+
+  let errors = [];
+
+  const validatorErrors = validationResult(req);
+
+  if(validatorErrors.isEmpty()) {
+    const user = await User.findOne({ where: { email } });
+
+    if(user !== null) {
+      const passwordMatch = await bcrypt.compare(password, user.password.toString());
+
+      if(passwordMatch) {
+        loginUser(req, res, user);
+        return res.redirect('/');
+      }
+    }
+  } else {
+    errors = validatorErrors.array().map((error) => error.msg);
+  }
+
+  res.render('user-login', {
+    title: 'Login',
+    email,
+    errors,
+    csrfToken: req.csrfToken(),
+  });
+}));
 
 const userValidators = [
   check('name')
@@ -112,12 +154,10 @@ router.post('/register', csrfProtection, userValidators, asyncHandler(async(req,
 
 }));
 
-
-
-
-
-
-
+router.post('/logout', (req, res) => {
+  logoutUser(req, res);
+  res.redirect('/');
+});
 
 
 module.exports = router;

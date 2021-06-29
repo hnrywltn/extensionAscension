@@ -85,6 +85,8 @@ made model associations
     //pofile image
     //existing extensions
     //bio
+    //hard-code info for a specific user (Alec's suggestion)
+    //have a demo button that will link to the hard-coded user
 
 //error handler handling
 
