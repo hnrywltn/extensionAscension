@@ -56,7 +56,46 @@ made model associations
 //Update the pug file to include the errors array so registration errors can be rendered on the page
 
 
-//////////////////////////
+////////DAY TWO - Proposed Tos///////////
+
+//create login routes
+
+    //router.get('/log-in')
+
+    //router.post('/log-in')
+
+//create login pug files
+
+//create logout routes
+
+//create the demo user
+    //pofile image
+    //exisiting extensions
+    //bio
+
+//error handler handling
+
+//seed the database with our ten selected extensions
+
+//search functionality
+
+////////Still To Do///////////
+
+//create products page pug file
+
+//design nav bar in pug file
+
+//create add product/extension routes
+
+//create delete product/extension routes
+
+//complete styling
+
+//if possible, add up vote functionality (join table)
+
+//practice presenting! :)
+
+////////Presentation Points///////////
 
 
 
