@@ -1,39 +1,38 @@
-html
-    head
-    body
-        div
-            if errors
-                div
-                    p The following error(s) occured:
-                    ul
-                        each error in errors
-                            li= error
-                            
-            form(action='/users/register' method='post')
-                input(type='hidden' name='_csrf' value=csrfToken)
-                div
-                    label(for='name') Name
-                    input(type='text' id='name' name='name' required)
-                div
-                    label(for='userName') Username
-                    input(type='text' id='userName' name='userName' required)
-                div
-                    label(for='email') Email
-                    input(type='text' id='email' name='email' required)
-                div
-                    label(for='password') Password
-                    input(type='text' id='password' name='password' required)
-                div
-                    label(for='confirmPassword') Confirm Password
-                    input(type='text' id='confirmPassword' name='confirmPassword' required)
-                div
-                    label(for='profileImg') Profile Image URL
-                    input(type='text' id='profileImg' name='profileImg')
-                div
-                    label(for='bio') User Bio
-                    textarea(id='bio' name='bio')
-                div
-                    button(type='submit') Register
+extends layout.pug
+block content
+            div
+                if errors
+                    div
+                        p The following error(s) occured:
+                        ul
+                            each error in errors
+                                li= error
 
-                    //- select(id='category' name='category' required)
-                    //-     option(value='cat1') Cat1
+                form(action='/users/register' method='post')
+                    input(type='hidden' name='_csrf' value=csrfToken)
+                    div
+                        label(for='name') Name
+                        input(type='text' id='name' name='name' required)
+                    div
+                        label(for='userName') Username
+                        input(type='text' id='userName' name='userName' required)
+                    div
+                        label(for='email') Email
+                        input(type='text' id='email' name='email' required)
+                    div
+                        label(for='password') Password
+                        input(type='text' id='password' name='password' required)
+                    div
+                        label(for='confirmPassword') Confirm Password
+                        input(type='text' id='confirmPassword' name='confirmPassword' required)
+                    div
+                        label(for='profileImg') Profile Image URL
+                        input(type='text' id='profileImg' name='profileImg')
+                    div
+                        label(for='bio') User Bio
+                        textarea(id='bio' name='bio')
+                    div
+                        button(type='submit') Register
+
+                        //- select(id='category' name='category' required)
+                        //-     option(value='cat1') Cat1
