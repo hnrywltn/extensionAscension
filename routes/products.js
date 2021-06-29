@@ -8,7 +8,7 @@ const { check, validationResult } = require('express-validator');
 
 
 
-///////////////TODO!! ----  grab the userId
+
 router.get('/submit', csrfProtection, function(req, res, next) {
   console.log(req.session)
   const userId = req.session.auth.userId
@@ -18,7 +18,6 @@ router.get('/submit', csrfProtection, function(req, res, next) {
     csrfToken: req.csrfToken(),
   });
 });
-////////////////////////////////////////////
 
 const productValidators = [
   check('productName')

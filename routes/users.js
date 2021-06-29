@@ -6,13 +6,9 @@ const { User } = require('../db/models');
 const { csrfProtection, asyncHandler } = require('./utils');
 const { check, validationResult } = require('express-validator');
 // const { ValidationError } = require('sequelize/types');
-const { loginUser, logoutUser } = require('../auth');
-
-//build validations array
+const { loginUser, logoutUser, restoreUser } = require('../auth');
 
 
-
-/* GET users listing. */
 
 
 router.get('/log-in', csrfProtection, function(req, res, next) {
@@ -154,8 +150,13 @@ router.post('/register', csrfProtection, userValidators, asyncHandler(async(req,
 
 }));
 
-router.post('/logout', (req, res) => {
+router.get('/log-out', (req, res) => {
   logoutUser(req, res);
+});
+
+router.get('/demo', (req, res) => {
+  const user = { id: 19 };
+  loginUser(req, res, user);
   res.redirect('/');
 });
 
