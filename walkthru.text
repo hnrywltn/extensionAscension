@@ -68,9 +68,22 @@ made model associations
 
 //create logout routes
 
+    In utils.js file?:
+
+        const logoutUser = (req, res) => {
+            delete req.session.auth;
+        };
+
+    In logout route:
+
+        router.post('/user/logout', (req, res) => {
+            logoutUser(req, res);
+            res.redirect('/');
+        });
+
 //create the demo user
     //pofile image
-    //exisiting extensions
+    //existing extensions
     //bio
 
 //error handler handling
