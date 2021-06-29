@@ -10,26 +10,59 @@ module.exports = {
       */
      //     {name, userName, email, password, profileImg, bio},
       return queryInterface.bulkInsert('Users', [
-        {'Benas Svipas', 'BnsSvps', 'BnsSvps@gmail.com', 'password', 'https://thispersondoesnotexist.com/', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'},
-        {'CoenraadS', 'CnrdS','CnrdS@gmail.com', 'password', 'https://thispersondoesnotexist.com/', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'},
-        {'Dirk Baeumer', 'DrkBmr','DrkBmr@gmail.com', 'password', 'https://thispersondoesnotexist.com/', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'},
-        {'HookyQR', 'HkyQR', 'HkyQR@gmail.com', 'password', 'https://thispersondoesnotexist.com/', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'},
-        {'quicktype', 'qcktyp', 'qcktyp@gmail.com', 'password', 'https://thispersondoesnotexist.com/', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'},
-        {'Aaron Bond', 'rnBnd', 'rnBnd@gmail.com', 'password', 'https://thispersondoesnotexist.com/', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'},
-        {'Kevin Rose', 'KvnRs', 'KvnRs@gmail.com', 'password', 'https://thispersondoesnotexist.com/', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'},
-        {'tombonnike', 'tmbnnk', 'tmbnnk@gmail.com', 'password', 'https://thispersondoesnotexist.com/', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'},
-        { 'Eric Amodio', 'Ercmdo', 'Ercmdo@gmail.com', 'password', 'https://thispersondoesnotexist.com/', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'},
-        {'Microsoft', 'Mcrsft', 'Mcrsft@gmail.com', 'password', 'https://thispersondoesnotexist.com/', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'},
-        {'CodeStream', 'Cdstrm', 'Cdstrm@gmail.com', 'password', 'https://thispersondoesnotexist.com/', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'},
-        { 'Arjun Attum', 'Ajnattm', 'Ajnattm@gmail.com', 'password', 'https://thispersondoesnotexist.com/', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'},
-        {'Maxfield Walker', 'Mxfldwlkr', 'Mxfldwlkr@gmail.com', 'password', 'https://thispersondoesnotexist.com/', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'},
-        { 'Philipp Kief', 'Phlppkf', 'Phlppkf@gmail.com', 'password', 'https://thispersondoesnotexist.com/', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'},
-        {'Derek Sifford', 'Drksffrd', 'Drksffrd@gmail.com', 'password', 'https://thispersondoesnotexist.com/', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'},
-        {'GitHub', 'Gthb', 'Gthb@gmail.com', 'password', 'https://thispersondoesnotexist.com/', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'},
-        {'Ahmad Awais', 'Ahmdws', 'Ahmdws@gmail.com', 'password', 'https://thispersondoesnotexist.com/', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'},
-        {'Monokai', 'Mnk', 'Mnk@gmail.com', 'password', 'https://thispersondoesnotexist.com/', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'},
-      ]);
-    //     {name, userName, email, password, profileImg, bio},
+        { name: 'Benas Svipas', userName: 'BnsSvps', email: 'BnsSvps@gmail.com', password: 'password', profileImg: 'https://thispersondoesnotexist.com/', bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.', createdAt: new Date(), updatedAt: new Date()},
+
+
+        { name: 'CoenraadS', userName: 'CnrdS', email: 'CnrdS@gmail.com', password: 'password', profileImg: 'https://thispersondoesnotexist.com/', bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.', createdAt: new Date(), updatedAt: new Date()},
+
+
+        { name: 'Dirk Baeumer', userName: 'DrkBmr', email: 'DrkBmr@gmail.com', password: 'password', profileImg: 'https://thispersondoesnotexist.com/', bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.', createdAt: new Date(), updatedAt: new Date()},
+
+
+        { name: 'HookyQR', userName: 'HkyQR', email: 'HkyQR@gmail.com', password: 'password', profileImg: 'https://thispersondoesnotexist.com/', bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.', createdAt: new Date(), updatedAt: new Date()},
+
+
+        { name: 'quicktype', userName: 'qcktyp', email: 'qcktyp@gmail.com', password: 'password', profileImg: 'https://thispersondoesnotexist.com/', bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.', createdAt: new Date(), updatedAt: new Date()},
+
+
+        { name: 'Aaron Bond', userName: 'rnBnd', email: 'rnBnd@gmail.com', password: 'password', profileImg: 'https://thispersondoesnotexist.com/', bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.', createdAt: new Date(), updatedAt: new Date()},
+
+
+        { name: 'Kevin Rose', userName: 'KvnRs', email: 'KvnRs@gmail.com', password: 'password', profileImg: 'https://thispersondoesnotexist.com/', bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.', createdAt: new Date(), updatedAt: new Date()},
+
+
+        { name: 'tombonnike', userName: 'tmbnnk', email: 'tmbnnk@gmail.com', password: 'password', profileImg: 'https://thispersondoesnotexist.com/', bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.', createdAt: new Date(), updatedAt: new Date()},
+
+
+        { name: 'Eric Amodio', userName: 'Ercmdo', email: 'Ercmdo@gmail.com', password: 'password', profileImg: 'https://thispersondoesnotexist.com/', bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.', createdAt: new Date(), updatedAt: new Date()},
+
+
+        {name: 'Microsoft', userName: 'Mcrsft', email: 'Mcrsft@gmail.com', password: 'password', profileImg: 'https://thispersondoesnotexist.com/', bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.', createdAt: new Date(), updatedAt: new Date()},
+
+
+        { name: 'CodeStream', userName: 'Cdstrm', email: 'Cdstrm@gmail.com', password: 'password', profileImg: 'https://thispersondoesnotexist.com/', bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.', createdAt: new Date(), updatedAt: new Date()},
+
+
+        { name: 'Arjun Attum', userName: 'Ajnattm', email: 'Ajnattm@gmail.com', password: 'password', profileImg: 'https://thispersondoesnotexist.com/', bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.', createdAt: new Date(), updatedAt: new Date()},
+
+
+        { name: 'Maxfield Walker', userName: 'Mxfldwlkr', email: 'Mxfldwlkr@gmail.com', password: 'password', profileImg: 'https://thispersondoesnotexist.com/', bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.', createdAt: new Date(), updatedAt: new Date()},
+
+
+        { name: 'Philipp Kief', userName: 'Phlppkf', email: 'Phlppkf@gmail.com', password: 'password', profileImg: 'https://thispersondoesnotexist.com/', bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.', createdAt: new Date(), updatedAt: new Date()},
+
+
+        { name: 'Derek Sifford', userName: 'Drksffrd', email: 'Drksffrd@gmail.com', password: 'password', profileImg: 'https://thispersondoesnotexist.com/', bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.', createdAt: new Date(), updatedAt: new Date()},
+
+
+        { name: 'GitHub', userName: 'Gthb', email: 'Gthb@gmail.com', password: 'password', profileImg: 'https://thispersondoesnotexist.com/', bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.', createdAt: new Date(), updatedAt: new Date()},
+
+
+        { name: 'Ahmad Awais', userName: 'Ahmdws', email: 'Ahmdws@gmail.com', password: 'password', profileImg: 'https://thispersondoesnotexist.com/', bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.', createdAt: new Date(), updatedAt: new Date()},
+
+
+        { name: 'Monokai', userName: 'Mnk', email: 'Mnk@gmail.com', password: 'password', profileImg: 'https://thispersondoesnotexist.com/', bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.', createdAt: new Date(), updatedAt: new Date()}
+      ])
   },
 
   down: (queryInterface, Sequelize) => {
