@@ -5,7 +5,7 @@ const bcrypt = require('bcryptjs');
 const { User } = require('../db/models');
 const { csrfProtection, asyncHandler } = require('./utils');
 const { check, validationResult } = require('express-validator');
-const { ValidationError } = require('sequelize/types');
+// const { ValidationError } = require('sequelize/types');
 const { loginUser, logoutUser } = require('../auth');
 
 //build validations array
