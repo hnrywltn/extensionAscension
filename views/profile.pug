@@ -1,0 +1,16 @@
+extends layout.pug
+
+block content
+    div
+        div
+            img(src= User.profileImg)
+        div
+            h1= User.name
+        div
+            h2 @#{User.userName}
+        div
+            button(type="submit") Edit Profile
+    div
+        h3= Extensions
+        each product in products
+            //- Add a mix-in here, and also use it on products page?
