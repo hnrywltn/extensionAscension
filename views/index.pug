@@ -8,4 +8,26 @@ append head
 
 block content
   h1= title
-  p Welcome to your Project Skeleton
+  p Products 
+    each product in allProducts 
+      div 
+        div
+          div 
+            img(src=product.imgUrl class="productImg" alt="product image" style="width:100px")
+          div Extension Name
+            p=product.productName 
+          div Creator Username
+            p=product.User.userName
+          div Extension Description 
+            p=product.description 
+          div 
+            div 
+              p=product.comment 
+          //-     each comment in product.comments 
+          //-       div 
+          //-         p=comment.body 
+          //-       div 
+          //-         p=comment.userId.userName 
+
+
+
