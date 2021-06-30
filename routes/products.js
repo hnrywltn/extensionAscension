@@ -6,9 +6,6 @@ const { csrfProtection, asyncHandler } = require('./utils');
 const { check, validationResult } = require('express-validator');
 
 
-
-
-
 router.get('/submit', csrfProtection, function(req, res, next) {
   console.log(req.session)
   const userId = req.session.auth.userId
@@ -54,7 +51,6 @@ router.post('/submit', csrfProtection, productValidators, asyncHandler(async(req
     userId
   } = req.body;
 
-
   let errors = [];
 
   const validatorErrors = validationResult(req);
@@ -86,9 +82,6 @@ router.post('/submit', csrfProtection, productValidators, asyncHandler(async(req
     csrfToken: req.csrfToken(),
   });
 }));
-
-
-
 
 
 

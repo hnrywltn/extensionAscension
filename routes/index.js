@@ -6,7 +6,8 @@ const { asyncHandler } = require('./utils')
 /* GET home page. */
 router.get('/', asyncHandler (async(req, res, next) => {
   console.log(req.session)
-  const allProducts = await db.Product.findAll({ 
+
+  const allProducts = await db.Product.findAll({
     include: { model: db.User,
       include: {
         model: db.Comment
