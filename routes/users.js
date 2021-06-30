@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const bcrypt = require('bcryptjs');
 
-const { User } = require('../db/models');
+const { User, Product } = require('../db/models');
 const { csrfProtection, asyncHandler } = require('./utils');
 const { check, validationResult } = require('express-validator');
 // const { ValidationError } = require('sequelize/types');
@@ -10,7 +10,7 @@ const { loginUser, logoutUser, restoreUser } = require('../auth');
 
 
 
-
+///////////////////////////login
 router.get('/log-in', csrfProtection, function(req, res, next) {
   res.render('user-login', {
     title: 'Login',
@@ -60,6 +60,10 @@ router.post('/log-in', csrfProtection, loginValidators, asyncHandler(async(req, 
   });
 }));
 
+
+
+
+/////////////////////////////////register
 const userValidators = [
   check('name')
     .exists({ checkFalsy: true })
@@ -150,6 +154,10 @@ router.post('/register', csrfProtection, userValidators, asyncHandler(async(req,
 
 }));
 
+
+
+
+//////////////////////////////////////logout/demo
 router.get('/log-out', (req, res) => {
   logoutUser(req, res);
 });
@@ -159,6 +167,21 @@ router.get('/demo', (req, res) => {
   loginUser(req, res, user);
   res.redirect('/');
 });
+
+
+///////////////////////////////////profile
+router.get(`/profile/:id(\\d+)`, csrfProtection, asyncHandler(async (req, res) => {
+  const userId = Number(req.params.id);
+  const user = await User.findByPk(userId);
+  const products = await Product.findAll({
+    where: { userId }
+  })
+  console.log(products);
+  res.render('profile', {
+    user,
+    products
+  })
+}));
 
 
 module.exports = router;
