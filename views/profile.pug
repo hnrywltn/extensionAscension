@@ -3,14 +3,21 @@ extends layout.pug
 block content
     div
         div
-            img(src= User.profileImg)
+            img(src= user.profileImg)
         div
-            h1= User.name
+            h1= user.name
         div
-            h2 @#{User.userName}
+            h2 @#{user.userName}
         div
             button(type="submit") Edit Profile
     div
         h3= Extensions
         each product in products
-            //- Add a mix-in here, and also use it on products page?
+          div
+            img(src=product.imgUrl class="productImg" alt="product image" style="width:100px")
+          div Extension Name
+            p=product.productName
+          div Creator Username
+            p=user.userName
+          div Extension Description
+            p=product.description

@@ -65,7 +65,7 @@ router.post('/submit', csrfProtection, productValidators, asyncHandler(async(req
       description
     });
 
-    return res.redirect('/');
+    return res.redirect(`/users/profile/${userId}`);
   } else {
     errors = validatorErrors.array().map((error) => error.msg);
   }
