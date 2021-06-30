@@ -12,16 +12,21 @@ block content
       div Extension Description
         p=product.description
     div
-      form(method=`/products/${product.id}` action="post")
+      form(method="post" action=`/products/${product.id}`)
         label(for="body")
-        textarea(name="body")
+        textarea(name="body" required)
         input(type="hidden" name="_csrf" value=csrfToken)
         button(type="submit") Comment
     div
       each comment in comments
         div
-          img(src=user.profileImg, alt="Profile Image")
+          img(src=comment.User.profileImg, alt="Profile Image")
         div
+          p=comment.User.userName
+        div
+          p=comment.body
+        div
+          p=comment.createdAt
 
 
 

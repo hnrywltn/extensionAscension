@@ -4,7 +4,7 @@ const loginUser = (req, res, user) => {
   req.session.auth = {
     userId: user.id,
   };
-  req.session.save(() => console.log('LOG IN!!!!!!!!!!', req.session.auth));
+  req.session.save(() => res.redirect('/'));
 
 };
 
@@ -24,14 +24,17 @@ const requireAuth = (req, res, next) => {
 const restoreUser = async (req, res, next) => {
   // Log the session object to the console
   // to assist with debugging.
-  console.log(req.session);
-  if (req.session.auth !== null) {
+  console.log('LOOOOOOOOOOOOOOOOOOOKKKKKK')
+  if (req.session.auth) {
+    console.log('inside restore', req.session.auth)
     const { userId } = req.session.auth;
     try {
-      const user = await db.User.findByPk(userId);
+      const user = await User.findByPk(userId);
       if (user) {
         res.locals.authenticated = true;
         res.locals.user = user;
+        res.locals.imgUrl = user.profileImg;
+        console.log('HELLLLLLOOOOOOOO', res.locals);
         next();
       }
     } catch (err) {
@@ -39,6 +42,8 @@ const restoreUser = async (req, res, next) => {
       next(err);
     }
   } else {
+    res.locals.imgUrl = 'https://freepikpsd.com/media/2019/11/1230424_black-lightning-bolt-png-Images.png';
+    console.log('OOOOOOOOOOHHHWWWOOOOOOOOOOOWWdang')
     res.locals.authenticated = false;
     next();
   }

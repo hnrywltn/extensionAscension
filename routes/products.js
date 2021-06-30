@@ -84,7 +84,7 @@ router.post('/submit', csrfProtection, productValidators, asyncHandler(async (re
 }));
 
 
-///////////////////////////get product by id
+///////////////////////////get product by id and comments post
 router.get("/:id(\\d+)", csrfProtection, asyncHandler(async (req, res) => {
   const productId = Number(req.params.id);
   const product = await Product.findByPk(productId, {
@@ -92,7 +92,8 @@ router.get("/:id(\\d+)", csrfProtection, asyncHandler(async (req, res) => {
   });
   const comments = await Comment.findAll({
     where: {productId},
-    include: User
+    include: User,
+    order: [["createdAt", "DESC"]]
   });
     res.render('product', {
       product,
@@ -101,7 +102,20 @@ router.get("/:id(\\d+)", csrfProtection, asyncHandler(async (req, res) => {
     })
 
 
-}))
+}));
+
+router.post("/:id(\\d+)", csrfProtection, asyncHandler(async (req, res) => {
+  const { body } = req.body;
+  // console.log(req.session.auth)
+  const comment = Comment.build({
+    body,
+    userId: req.session.auth.userId,
+    productId: Number(req.params.id)
+  })
+  await comment.save();
+  res.redirect(`/products/${Number(req.params.id)}`)
+
+}));
 
 
 module.exports = router;

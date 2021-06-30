@@ -5,15 +5,16 @@ const { asyncHandler } = require('./utils')
 
 /* GET home page. */
 router.get('/', asyncHandler (async(req, res, next) => {
-  console.log(req.session)
-
   const allProducts = await Product.findAll({
     include: { model: User,
       include: {
         model: Comment
       }},
     })
-  res.render('index', { title: 'Extension Ascension', allProducts });
+  res.render('index', {
+    title: 'Extension Ascension',
+    allProducts
+  });
 }));
 
 module.exports = router;
