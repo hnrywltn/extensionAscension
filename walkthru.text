@@ -117,17 +117,17 @@ Search Result Drop Down
 ////////Presentation Points///////////
 
 
-////////Group 1///////////
+DAY 3:
+add comments to index.pug
+create /products/:id/comments route
+edit/delete for products and comments
 
-seed users
+create profile.pug 
+    list extensions posted by user
+    delete posts/comments
 
-////////Group 2//////
+search functionality?!
 
-seed products & categories
-
-//////Group andru/////
-
-set up seeder files
 
 
 
