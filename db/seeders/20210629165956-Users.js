@@ -61,7 +61,10 @@ module.exports = {
         { name: 'Ahmad Awais', userName: 'Ahmdws', email: 'Ahmdws@gmail.com', password: 'password', profileImg: 'https://thispersondoesnotexist.com/image', bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.', createdAt: new Date(), updatedAt: new Date()},
 
 
-        { name: 'Monokai', userName: 'Mnk', email: 'Mnk@gmail.com', password: 'password', profileImg: 'https://thispersondoesnotexist.com/image', bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.', createdAt: new Date(), updatedAt: new Date()}
+        { name: 'Monokai', userName: 'Mnk', email: 'Mnk@gmail.com', password: 'password', profileImg: 'https://thispersondoesnotexist.com/image', bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.', createdAt: new Date(), updatedAt: new Date()},
+
+
+        { name: 'demoGod', userName: 'demoGod', email: 'demo@god.com', password: 'password', profileImg: 'https://image.flaticon.com/icons/png/512/647/647721.png', bio: 'Zeus is the god of the sky in ancient Greek mythology. As the chief Greek deity, Zeus is considered the ruler, protector, and father of all gods and humans. Zeus is often depicted as an older man with a beard and is represented by symbols such as the lightning bolt and the eagle.', createdAt: new Date(), updatedAt: new Date()}
       ])
   },
 
