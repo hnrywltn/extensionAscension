@@ -152,7 +152,31 @@ module.exports = {
             imgUrl: 'https://monokai.gallerycdn.vsassets.io/extensions/monokai/theme-monokai-pro-vscode/1.1.19/1617689615821/Microsoft.VisualStudio.Services.Icons.Default',
             userId: 18,
             categoryId: 3
-        , createdAt: new Date(), updatedAt: new Date() }
+        , createdAt: new Date(), updatedAt: new Date() },
+        {
+            productName: 'Medusa Snippets',
+            description: 'Simple snippet commands for Python. Credit to Ferhat Yalçın.',
+            productUrl: 'https://marketplace.visualstudio.com/items?itemName=frhtylcn.pythonsnippets#review-details',
+            imgUrl: 'https://frhtylcn.gallerycdn.vsassets.io/extensions/frhtylcn/pythonsnippets/1.0.2/1540517851264/Microsoft.VisualStudio.Services.Icons.Default',
+            userId: 19,
+            categoryId: 1
+        , createdAt: new Date(), updatedAt: new Date() },
+        {
+            productName: 'The River Styx Theme',
+            description: 'A dark theme for vscode. Credit to binaryify.',
+            productUrl: 'https://marketplace.visualstudio.com/items?itemName=zhuangtongfa.Material-theme#review-details',
+            imgUrl: 'https://zhuangtongfa.gallerycdn.vsassets.io/extensions/zhuangtongfa/material-theme/3.10.14/1620184368869/Microsoft.VisualStudio.Services.Icons.Default',
+            userId: 19,
+            categoryId: 3
+        , createdAt: new Date(), updatedAt: new Date() },
+        {
+            productName: 'Apollo Workbench',
+            description: 'A workbench tool to help design schemas using Apollo Federation and work with the composed results. Credit to Apollo GraphQL.',
+            productUrl: 'https://marketplace.visualstudio.com/items?itemName=apollographql.apollo-workbench#review-details',
+            imgUrl: 'https://apollographql.gallerycdn.vsassets.io/extensions/apollographql/apollo-workbench/1.0.11/1617702481272/Microsoft.VisualStudio.Services.Icons.Default',
+            userId: 19,
+            categoryId: 2
+        , createdAt: new Date(), updatedAt: new Date() },
     ], {});
 
   },
