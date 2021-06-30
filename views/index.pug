@@ -8,26 +8,18 @@ append head
 
 block content
   h1= title
-  p Products 
-    each product in allProducts 
-      div 
+  p Products
+    each product in allProducts
+      div
         div
-          div 
+          div
             img(src=product.imgUrl class="productImg" alt="product image" style="width:100px")
           div Extension Name
-            p=product.productName 
+            p=product.productName
           div Creator Username
             p=product.User.userName
-          div Extension Description 
-            p=product.description 
-          div 
-            div 
-              p=product.comment 
-          //-     each comment in product.comments 
-          //-       div 
-          //-         p=comment.body 
-          //-       div 
-          //-         p=comment.userId.userName 
-
-
-
+          div Extension Description
+            p=product.description
+          div
+            a(href=`/products/${product.id}`)
+              img(src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSg-iPACMkP7ZTmjyba-FxNuQBbvTL9CxW9jQ&usqp=CAU", alt="Comments" style="width:40px")
