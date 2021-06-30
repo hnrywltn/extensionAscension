@@ -58,31 +58,19 @@ made model associations
 
 ////////DAY TWO - Proposed Tos///////////
 
-//create login routes
+done //create login routes
 
     //router.get('/log-in')
 
     //router.post('/log-in')
 
-//create login pug files
+done //create login pug files
 
-//create logout routes
+done //create logout routes
 
-    In utils.js file?:
-
-        const logoutUser = (req, res) => {
-            delete req.session.auth;
-        };
-
-    In logout route:
-
-        router.post('/user/logout', (req, res) => {
-            logoutUser(req, res);
-            res.redirect('/');
-        });
 
 //create the demo user
-    //pofile image
+    //profile image
     //existing extensions
     //bio
     //hard-code info for a specific user (Alec's suggestion)
@@ -90,9 +78,9 @@ made model associations
 
 //error handler handling
 
-//seed the database with our ten selected extensions
+done //seed the database with our ten selected extensions
 
-//seed user database with user file
+done //seed user database with user file
 
 //search functionality
 
@@ -100,9 +88,9 @@ made model associations
 
 //create products page pug file
 
-//design nav bar in pug file
+done //created nav bar in pug file
 
-//create add product/extension routes
+done //create add product/extension routes
 
 //create delete product/extension routes
 
@@ -113,11 +101,17 @@ made model associations
 //practice presenting! :)
 
 
+////////////////AFTERNOON/////////////
+
+done //add demo to seeder file
+
+add products to demo user
+
+product list page/ home page
+
 ??????????MAYBE????????????????
 
 Search Result Drop Down
-
-
 
 
 ////////Presentation Points///////////
