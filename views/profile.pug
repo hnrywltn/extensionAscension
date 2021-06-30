@@ -21,3 +21,6 @@ block content
             p=user.userName
           div Extension Description
             p=product.description
+          if signedIn
+            form(action=`/users/product/${product.id}` method="post")
+              button(type="submit") DELETE

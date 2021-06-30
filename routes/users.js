@@ -45,7 +45,6 @@ router.post('/log-in', csrfProtection, loginValidators, asyncHandler(async(req, 
 
       if(passwordMatch) {
         loginUser(req, res, user);
-        return res.redirect('/');
       }
     }
   } else {
@@ -139,7 +138,7 @@ router.post('/register', csrfProtection, userValidators, asyncHandler(async(req,
     const hashedPassword = await bcrypt.hash(password, 10);
     user.password = hashedPassword;
     await user.save();
-    res.redirect('/');
+    loginUser(req, res, user);
   } else {
     const errors = validatorErrors.array().map((error) => error.msg);
 
@@ -165,7 +164,6 @@ router.get('/log-out', (req, res) => {
 router.get('/demo', (req, res) => {
   const user = { id: 19 };
   loginUser(req, res, user);
-  res.redirect('/');
 });
 
 
@@ -176,12 +174,29 @@ router.get(`/profile/:id(\\d+)`, csrfProtection, asyncHandler(async (req, res) =
   const products = await Product.findAll({
     where: { userId }
   })
-  console.log(products);
+  let signedIn = false;
+
+  if(req.session.auth.userId && (req.session.auth.userId === Number(req.params.id))) signedIn = true;
+  // console.log(products);
   res.render('profile', {
     user,
-    products
+    products,
+    signedIn
   })
 }));
+
+router.post(`/product/:id(\\d+)`, asyncHandler(async(req, res) => {
+  const productId = Number(req.params.id);
+  const removed = await Product.findByPk(productId);
+  await removed.destroy();
+  // console.log('WEEEEEEEEEEEEEEEEEEE', req.session.auth.userId)
+  res.redirect(`/users/profile/${req.session.auth.userId}`)
+}))
+
+
+
+
+
 
 
 module.exports = router;
