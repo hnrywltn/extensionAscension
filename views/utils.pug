@@ -1,0 +1,27 @@
+
+mixin userProducts(products)
+    if products
+        div
+            each product in allProducts
+                div
+                    img(src=product.imgUrl class="productImg" alt="product image" style="width:100px")
+                div Extension Name
+                    p=product.productName
+                div Creator Username
+                    p=product.User.userName
+                div Extension Description
+                    p=product.description
+                div
+                    button(type="submit") Delete Extension
+    else
+        p No extensions submitted yet!
+
+mixin validationErrorSummary(errors)
+    if errors
+        div
+            h6 The following error(s) occured:
+            ul
+                each error in errors
+                    li= error
+
+//-We could add this mixin to the beginning of: user-register.pug, user-login.pug, submit-product.pug
