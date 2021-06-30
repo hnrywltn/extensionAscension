@@ -1,12 +1,12 @@
 const express = require('express');
 const router = express.Router();
 
-const { User, Product } = require('../db/models');
+const { User, Product, Comment } = require('../db/models');
 const { csrfProtection, asyncHandler } = require('./utils');
 const { check, validationResult } = require('express-validator');
 
 
-router.get('/submit', csrfProtection, function(req, res, next) {
+router.get('/submit', csrfProtection, function (req, res, next) {
   console.log(req.session)
   const userId = req.session.auth.userId
   res.render('submit-product', {
@@ -20,15 +20,15 @@ const productValidators = [
   check('productName')
     .exists({ checkFalsy: true })
     .withMessage('Please provide a value for Extension Name')
-    .isLength({max: 50})
+    .isLength({ max: 50 })
     .withMessage('Too long fool'),
   check('imgUrl')
-    .isLength({max: 400})
+    .isLength({ max: 400 })
     .withMessage('Too long fool'),
   check('productUrl')
     .exists({ checkFalsy: true })
     .withMessage('Please provide a value for Extension URL')
-    .isLength({max: 400})
+    .isLength({ max: 400 })
     .withMessage('Too long fool'),
   check('categoryId')
     .exists({ checkFalsy: true })
@@ -41,7 +41,7 @@ const productValidators = [
     .withMessage('Stop hacking around fool')
 ];
 
-router.post('/submit', csrfProtection, productValidators, asyncHandler(async(req, res, next) => {
+router.post('/submit', csrfProtection, productValidators, asyncHandler(async (req, res, next) => {
   const {
     productName,
     imgUrl: imgUrl,
@@ -55,7 +55,7 @@ router.post('/submit', csrfProtection, productValidators, asyncHandler(async(req
 
   const validatorErrors = validationResult(req);
 
-  if(validatorErrors.isEmpty()) {
+  if (validatorErrors.isEmpty()) {
     const extension = await Product.create({
       productName,
       imgUrl,
@@ -83,6 +83,25 @@ router.post('/submit', csrfProtection, productValidators, asyncHandler(async(req
   });
 }));
 
+
+///////////////////////////get product by id
+router.get("/:id(\\d+)", csrfProtection, asyncHandler(async (req, res) => {
+  const productId = Number(req.params.id);
+  const product = await Product.findByPk(productId, {
+    include: User
+  });
+  const comments = await Comment.findAll({
+    where: {productId},
+    include: User
+  });
+    res.render('product', {
+      product,
+      comments,
+      csrfToken: req.csrfToken()
+    })
+
+
+}))
 
 
 module.exports = router;

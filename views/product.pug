@@ -1,0 +1,32 @@
+extends layout.pug
+block content
+  div
+    h1=product.name
+    div
+      div
+        img(src=product.imgUrl class="productImg" alt="product image" style="width:100px")
+      div Extension Name
+        p=product.productName
+      div Creator Username
+        p=product.User.userName
+      div Extension Description
+        p=product.description
+    div
+      form(method=`/products/${product.id}` action="post")
+        label(for="body")
+        textarea(name="body")
+        input(type="hidden" name="_csrf" value=csrfToken)
+        button(type="submit") Comment
+    div
+      each comment in comments
+        div
+          img(src=user.profileImg, alt="Profile Image")
+        div
+
+
+
+
+
+
+
+//- comments, user, product
