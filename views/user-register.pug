@@ -9,29 +9,29 @@ block content
                             each error in errors
                                 li= error
             div(id="register-form")
-                form(action='/users/register' method='post') Register
+                form(action='/users/register' method='post')
                     input(type='hidden' name='_csrf' value=csrfToken)
                     div
-                        label(for='name') Name
-                        input(type='text' id='name' name='name' required)
+                        label(for='name' class="register-text") Name
+                        input(type='text' id='name' class="register-input" name='name' required)
                     div
-                        label(for='userName') Username
-                        input(type='text' id='userName' name='userName' required)
+                        label(for='userName' class="register-text") Username
+                        input(type='text' id='userName' class="register-input" name='userName' required)
                     div
-                        label(for='email') Email
-                        input(type='text' id='email' name='email' required)
+                        label(for='email' class="register-text") Email
+                        input(type='text' id='email' name='email' class="register-input" required)
                     div
-                        label(for='password') Password
-                        input(type='text' id='password' name='password' required)
+                        label(for='password' class="register-text") Password
+                        input(type='text' id='password' name='password' class="register-input" required)
                     div
-                        label(for='confirmPassword') Confirm Password
-                        input(type='text' id='confirmPassword' name='confirmPassword' required)
+                        label(for='confirmPassword' class="register-text") Confirm Password
+                        input(type='text' id='confirmPassword' class="register-input" name='confirmPassword' required)
                     div
-                        label(for='profileImg') Profile Image URL
-                        input(type='text' id='profileImg' name='profileImg')
+                        label(for='profileImg' class="register-text") Profile Image URL
+                        input(type='text' id='profileImg' class="register-input" name='profileImg')
                     div
-                        label(for='bio') User Bio
-                        textarea(id='bio' name='bio')
+                        label(for='bio' class="register-text") User Bio
+                        textarea(id='bio' class="register-input" name='bio')
                     div
                         button(type='submit' id="register-btn") Register
 

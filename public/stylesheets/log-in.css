@@ -1,0 +1,32 @@
+/* *******Log-In Page******* */
+body{
+    background-image: url("https://cdnb.artstation.com/p/assets/images/images/005/262/679/medium/tami-wicinas-tami-1.jpg?1489715625");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#log-in-div{
+
+    padding-top: 75px;
+    padding-left: 75px;
+}
+
+#login-text{
+
+}
+
+#log-in-form {
+    background-color: slateblue;
+    border: 2px solid rgb(16, 16, 77);
+    width: 400px;
+    height: 200px;
+    border-radius: 5px;
+    padding: 15px;
+    line-height: 40px;
+
+}
+#log-in-form label, #log-in-form form {
+    font-size: 30px;
+    /* padding: 15px; */
+
+}

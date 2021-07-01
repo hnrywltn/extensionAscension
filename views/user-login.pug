@@ -1,6 +1,6 @@
 extends layout.pug
 block content
-    div(class="log-in-div")
+    div(id="log-in-div")
         div(id="log-in-errors")
             if errors
                 div
@@ -9,8 +9,10 @@ block content
                         each error in errors
                             li= error
         div(id="log-in-form")
-            form(action='/users/log-in' method='post') Login
+            form(action='/users/log-in' method='post')
                 input(type='hidden' name='_csrf' value=csrfToken)
+                div
+                    p(id="p-login") Login
                 div
                     label(for='email') Email
                     input(type='text' id='email' name='email' required)
