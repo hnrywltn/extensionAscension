@@ -185,6 +185,16 @@ router.get(`/profile/:id(\\d+)`, csrfProtection, asyncHandler(async (req, res) =
   })
 }));
 
+/////////////////Edit Description///////////////////////////////////
+router.patch(`/product/:id(\\d+)`, asyncHandler(async(req,res) =>{
+  const {description, productId} = req.body;
+    console.log(req.body, "req.body")
+  const updateProduct = await Product.findByPk(productId);
+    updateProduct.description = description;
+    await updateProduct.save()
+    res.json({updateProduct})
+}))
+
 router.post(`/product/:id(\\d+)`, asyncHandler(async(req, res) => {
   const productId = Number(req.params.id);
   const removed = await Product.findByPk(productId);
@@ -192,6 +202,7 @@ router.post(`/product/:id(\\d+)`, asyncHandler(async(req, res) => {
   // console.log('WEEEEEEEEEEEEEEEEEEE', req.session.auth.userId)
   res.redirect(`/users/profile/${req.session.auth.userId}`)
 }))
+
 
 
 
