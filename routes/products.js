@@ -7,12 +7,17 @@ const { check, validationResult } = require('express-validator');
 
 
 router.get('/submit', csrfProtection, function (req, res, next) {
-  const userId = req.session.auth.userId
-  res.render('submit-product', {
-    title: 'Submit Extension',
-    userId,
-    csrfToken: req.csrfToken(),
-  });
+
+  if(req.session.auth) {
+    const userId = req.session.auth.userId
+    res.render('submit-product', {
+      title: 'Submit Extension',
+      userId,
+      csrfToken: req.csrfToken(),
+    });
+  } else {
+    res.redirect('/users/log-in')
+  }
 });
 
 const productValidators = [
@@ -85,23 +90,27 @@ router.post('/submit', csrfProtection, productValidators, asyncHandler(async (re
 
 ///////////////////////////get product by id and comments post
 router.get("/:id(\\d+)", csrfProtection, asyncHandler(async (req, res) => {
-  const productId = Number(req.params.id);
-  const product = await Product.findByPk(productId, {
-    include: User
-  });
-  const comments = await Comment.findAll({
-    where: {productId},
-    include: User,
-    order: [["createdAt", "DESC"]]
-  });
+  if(req.session.auth) {
+    const productId = Number(req.params.id);
+    const product = await Product.findByPk(productId, {
+      include: User
+    });
+    const comments = await Comment.findAll({
+      where: {productId},
+      include: User,
+      order: [["createdAt", "DESC"]]
+    });
     res.render('product', {
       product,
       comments,
       csrfToken: req.csrfToken()
     })
-
-
+  } else {
+    res.redirect('/users/log-in')
+  }
 }));
+
+
 
 router.post("/:id(\\d+)", csrfProtection, asyncHandler(async (req, res) => {
   const { body } = req.body;
