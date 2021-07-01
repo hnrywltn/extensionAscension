@@ -5,21 +5,22 @@ html
         script(src="/javascripts/events.js" type='module')
         title="Extention Ascension"
         link(rel='stylesheet' href='/stylesheets/reset.css')
+        link(rel='stylesheet' href='/stylesheets/index.css')
   body
-    nav
-      div
-        a(href="/") Extension Ascension
+    nav(id="nav-bar")
+      div(class="nav-bar" id="home-img")
+        a(href="/") 
           img(src="https://slack-imgs.com/?c=1&o1=ro&url=https%3A%2F%2Flh3.googleusercontent.com%2FgrsFEMjyDfT4nHX8Crx1q83V_Ma-ZNcuU_-OBj2zx4bGk6HhWkAhw2W4_GsCeSxP9ewkp2Vc6er3ZlCWXz4KOg95aAQgBobSWRVFSgBdU-bTW0rmIvCsibQMlVarCFLRt4MkNr_YAg" style='width:100px; height:100px;' alt="ExtensionAscensionICONIMAGE")
-      div
+      div(class="nav-bar" id="search")
         form(action="", name="findUE", method="get")
           input(type="text" id="findUE" name='findUE' placeholder='Search for User or Extension')
           button(type="submit") Search
-      div
+      div(class="nav-bar" id="submit-product")
         a(href="/products/submit") SUBMIT PRODUCT
-      div
-        a(href=`/users/profile/${userId}`)
-          img(src=imgUrl, alt="User Photo")
-        div(class="hidden" id="thomas")
+      div(class="nav-bar" id="profile-div") 
+        a(href=`/users/profile/${userId}` id='profile-img')
+          img(style="width:70px" src=imgUrl, alt="User Photo" )
+        div(class="hidden" id="thomas") 
           ul
             li
               a(href="/users/demo") Demo
@@ -29,8 +30,8 @@ html
               a(href="/users/log-in") Log-in
             li
               a(href="/users/log-out") Log-out
-          //- option(value="/users/demo") Demo
-          //- option(value="/users/register") Register
-          //- option(value="/users/log-in") Log-in
-          //- option(value="/users/log-out") Log-out
+          option(value="/users/demo") Demo
+          option(value="/users/register") Register
+          option(value="/users/log-in") Log-in
+          option(value="/users/log-out") Log-out
     block content
