@@ -49,14 +49,14 @@ router.post('/log-in', csrfProtection, loginValidators, asyncHandler(async(req, 
     }
   } else {
     errors = validatorErrors.array().map((error) => error.msg);
+    res.render('user-login', {
+      title: 'Login',
+      email,
+      errors,
+      csrfToken: req.csrfToken(),
+    });
   }
 
-  res.render('user-login', {
-    title: 'Login',
-    email,
-    errors,
-    csrfToken: req.csrfToken(),
-  });
 }));
 
 
@@ -177,7 +177,6 @@ router.get(`/profile/:id(\\d+)`, csrfProtection, asyncHandler(async (req, res) =
   let signedIn = false;
 
   if(req.session.auth.userId && (req.session.auth.userId === Number(req.params.id))) signedIn = true;
-  // console.log(products);
   res.render('profile', {
     user,
     products,
@@ -192,6 +191,9 @@ router.patch(`/product/:id(\\d+)`, asyncHandler(async(req,res) =>{
   const updateProduct = await Product.findByPk(productId);
     updateProduct.description = description;
     await updateProduct.save()
+    // console.log('UPDATED PRODUCT', updateProduct)
+    const test = await Product.findByPk(productId);
+    console.log(test.description)
     res.json({updateProduct})
 }))
 
@@ -199,7 +201,6 @@ router.post(`/product/:id(\\d+)`, asyncHandler(async(req, res) => {
   const productId = Number(req.params.id);
   const removed = await Product.findByPk(productId);
   await removed.destroy();
-  // console.log('WEEEEEEEEEEEEEEEEEEE', req.session.auth.userId)
   res.redirect(`/users/profile/${req.session.auth.userId}`)
 }))
 

@@ -1,8 +1,6 @@
 window.addEventListener("DOMContentLoaded", event => {
-    console.log('Hello from anyone or anwhere')
     const editButton = document.querySelectorAll('.edit-button')
     // const productDescDiv = document.getElementById('description-div')
-    console.log(editButton)
 
     editButton.forEach(node => {
 
@@ -10,24 +8,25 @@ window.addEventListener("DOMContentLoaded", event => {
         event.preventDefault();
 
         const productId = Number(event.target.id.split('-')[2]);
-        const editBody = document.getElementById(`edit-body-${productId}`)
+        const editBody = document.getElementById(`edit-body-${productId}`).value;
         const desc = document.getElementById(`description-container-${productId}`)
 
 
-        const updateDescFetch = await fetch(`users/product/${productId}`, {
+        const updateDescFetch = await fetch(`/users/product/${productId}`, {
                 method: "PATCH",
                 headers: {
                   "content-type": "application/json"
                 },
                 body: JSON.stringify({
-                    description: desc,
+                    description: editBody,
                     productId
                 })
             })
 
         const json = await updateDescFetch.json();
-            desc.innerHTML = json.description;
-            editBody.value ="";
+        console.log(json, 'JSON')
+        desc.innerHTML = json.updateProduct.description;
+        editBody ="";
 
     })
   })
