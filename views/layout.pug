@@ -17,7 +17,8 @@ html
       div
         a(href="/products/submit") SUBMIT PRODUCT
       div
-        img(src=imgUrl, alt="User Photo")
+        a(href=`/users/profile/${userId}`)
+          img(src=imgUrl, alt="User Photo")
         div(class="hidden" id="thomas")
           ul
             li
