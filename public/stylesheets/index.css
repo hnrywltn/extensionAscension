@@ -1,3 +1,18 @@
-h1 {
-    color: #555555;
+#nav-bar {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    box-sizing: border-box;
+}
+.nav-bar {
+    padding: 5px;
+
+}
+
+#profile-div ul {
+    color: white;
+}
+
+#profile-div ul:hover {
+    color: black;
 }
