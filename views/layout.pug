@@ -9,7 +9,7 @@ html
   body
     nav(id="nav-bar")
       div(class="nav-bar" id="home-img")
-        a(href="/") 
+        a(href="/")
           img(src="https://slack-imgs.com/?c=1&o1=ro&url=https%3A%2F%2Flh3.googleusercontent.com%2FgrsFEMjyDfT4nHX8Crx1q83V_Ma-ZNcuU_-OBj2zx4bGk6HhWkAhw2W4_GsCeSxP9ewkp2Vc6er3ZlCWXz4KOg95aAQgBobSWRVFSgBdU-bTW0rmIvCsibQMlVarCFLRt4MkNr_YAg" style='width:100px; height:100px;' alt="ExtensionAscensionICONIMAGE")
       div(class="nav-bar" id="search")
         form(action="", name="findUE", method="get")
@@ -17,21 +17,12 @@ html
           button(type="submit") Search
       div(class="nav-bar" id="submit-product")
         a(href="/products/submit") SUBMIT PRODUCT
-      div(class="nav-bar" id="profile-div") 
-        a(href=`/users/profile/${userId}` id='profile-img')
-          img(style="width:70px" src=imgUrl, alt="User Photo" )
-        div(class="hidden" id="thomas") 
-          ul
-            li
-              a(href="/users/demo") Demo
-            li
-              a(href="/users/register") Register
-            li
-              a(href="/users/log-in") Log-in
-            li
-              a(href="/users/log-out") Log-out
-          option(value="/users/demo") Demo
-          option(value="/users/register") Register
-          option(value="/users/log-in") Log-in
-          option(value="/users/log-out") Log-out
+      div(class="nav-bar" class="dropdown")
+        a(href=`/users/profile/${userId}` id='d')
+          img(style="width:70px" src=imgUrl, alt="User Photo" class='dropbtn' )
+        div(class="dropdown-content")
+            a(href="/users/demo") Demo
+            a(href="/users/register") Register
+            a(href="/users/log-in") Log-in
+            a(href="/users/log-out") Log-out
     block content
