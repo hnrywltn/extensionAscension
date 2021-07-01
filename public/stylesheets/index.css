@@ -3,16 +3,30 @@
     justify-content: space-around;
     align-items: center;
     box-sizing: border-box;
+    background-color: aqua;
 }
 .nav-bar {
     padding: 5px;
-
 }
 
-#profile-div ul {
-    color: white;
+#thomas {
+    /* background-color: aqua; */
 }
 
-#profile-div ul:hover {
+#thomas ul {
+    color: rgba(255, 255, 255, 0);
+    background: url("https://www.clipartmax.com/png/middle/8-89632_welcome-to-neptune-aquatics-solutions-greek-gods-cartoon.png");
+    background-repeat: no-repeat;
+    background-size: 90px 70px;
+    /* transition-property: color;
+    transition-duration: .5s; */
+}
+
+#thomas ul:hover {
+    background: none;
     color: black;
+}
+
+body {
+    /* display: flex; */
 }
