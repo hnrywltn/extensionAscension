@@ -20,42 +20,51 @@
 /* *******Submit Extension and Register Forms******* */
 
 .submit-form-div, .register-form-div {
-    background-image: url("https://tinyurl.com/ejm8hxx8");
-    padding: 20px;
-    background-repeat: no-repeat;
-    background-position: right;
+    padding: 100px;
+
 }
 
 #submit-form, #register-form {
     display: flex;
+    color: snow;
+    font-size: 20px;
+    /* change text shadow if it's bad */
+    text-shadow: rgb(255, 204, 0) 1px 0 10px;
+    box-shadow: inset 0 0 10px rgb(219, 197, 72);
     justify-content: space-around;
     position: relative;
     box-sizing: border-box;
-    background-color: rgb(136, 245, 245);
-    padding: 20px;
+    background-color: rgba(98, 61, 200, 0.65);;
     border: 2px solid rgb(16, 16, 77);
     border-radius: 5px;
-    width: 50%;
+    width: 35%;
     line-height: 30px;
+    padding: 40px;
 }
 
 #product-submit-btn, #register-btn, #log-in-btn, #comment-btn {
+    background-color: gold;
     border-radius: 5px;
-    font-size: 15px;
-    background-color: rgb(238, 206, 28);
+    padding: 5px 15px;
+    font-size: 20px;
 }
 
 #product-submit-btn:hover, #register-btn:hover, #log-in-btn:hover, #comment-btn:hover {
-    background-color: gold;
-    padding: 5px 15px;
-    font-size: 20px;
+    box-shadow: inset 0 0 10px #39434B
     /* background-image: linear-gradient(to right, rbg(28, 110, 164) 0%, rgb(35, 136, 203) 50%, rgb(20, 78, 117) 100%); */
+}
+.register-text{
+    font-size: 25px;
+}
+
+.register-input{
+    background-color: rgb(214, 216, 191);
 }
 
 #submit-form input, #submit-form input select, #register-form input, #register-form input select {
     width: 100%;
     box-sizing: border-box;
-    padding: 12px, 20px;
+    padding: 5px, 20px;
     margin: 5px 0;
     border-radius: 5px;
 }
@@ -73,23 +82,7 @@ select {
     height: 75px;
 }
 
-/* *******Log-In Page******* */
-
-#log-in-form {
-    border: 2px solid rgb(16, 16, 77);
-    width: 400px;
-    height: 200px;
-    border-radius: 5px;
-    padding: 15px;
-    line-height: 40px;
-
-}
-#log-in-form label, #log-in-form form {
-    font-size: 30px;
-    /* padding: 15px; */
-
-}
-
+/* NAV BAR DROPDOWN */
 
 .dropdown {
     position: relative;
@@ -188,4 +181,73 @@ select {
 
 #comment-btn {
     width:100%;
+}
+
+
+/* Product page sytling */
+
+#header-container{
+    display: flex;
+    justify-content: center;
+}
+
+.trash{
+    font-size: 75px;
+    color: gold;
+}
+
+.super-container{
+    display: flex;
+    justify-content: center;
+}
+
+.product-container-div{
+    min-width: 75%;
+    max-width: 75%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 2fr 1fr 1fr;
+    grid-column-end: 8;
+    grid-row-end: 1;
+    grid-row-start:8;
+    border: rgb(48, 77, 93) solid 3px;
+    padding: 25px;
+    margin: 25px;
+    border-radius: 7px;
+    box-shadow: inset 0 0 10px #39434b;
+    background-image: url("https://www.pixeden.com/media/k2/galleries/165/001-subtle-light-pattern-background-texture-vol5.jpg");
+}
+
+.product-img-div{
+    padding-top: 30px;
+    padding-left: 30px;
+    grid-row: 1 /span 4;
+    grid-column: 1 /span 2;
+}
+
+.extension-name-div{
+    font-size: 100px;
+    grid-row: 1 / span 2;
+    grid-column:3 / span end;
+    justify-self: start;
+}
+
+.creator-username-div{
+    grid-row: 2 / span 1;
+    grid-column: 3 / span 2;
+    justify-self: start;
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.extension-description-div{
+    grid-row: 3 / span 1;
+    grid-column:3 /span 2;
+    justify-self: start;
+    font-size: 30px;
+}
+
+.comments-img-div{
+    grid-row: 3 / span 1;
+    grid-column: 6 /span 1;
+    padding: 10px;
 }

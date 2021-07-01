@@ -7,19 +7,20 @@ append head
   script(src="/javascripts/index.js" type="module" defer)
 
 block content
-  h1= title
-  p Extensions
-    each product in allProducts
-      div
-        div
-          div
-            img(src=product.imgUrl class="productImg" alt="product image" style="width:100px")
-          div Extension Name
-            p=product.productName
-          div Creator Username
-            p=product.User.userName
-          div Extension Description
-            p=product.description
-          div
-            a(href=`/products/${product.id}`)
-              img(src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSg-iPACMkP7ZTmjyba-FxNuQBbvTL9CxW9jQ&usqp=CAU", alt="Comments" style="width:40px")
+  div(id="header-container")
+    marquee(behavior="scroll", direction="left" class="trash")= `${title} ${title} ${title} ${title} ${title} ${title} ${title} ${title} ${title} ${title} ${title} ${title} ${title}`
+    marquee(behavior="scroll", direction="right" class="trash")= `${title} ${title} ${title} ${title} ${title} ${title} ${title} ${title} ${title} ${title} ${title} ${title} ${title}`
+  each product in allProducts
+    div(class="super-container")
+      div(class="product-container-div")
+        div(class="product-img-div")
+          img(src=product.imgUrl class="productImg" alt="product image" style="width:250px")
+        div(class="extension-name-div")
+          p=product.productName
+        div(class="creator-username-div")
+          p=`@${product.User.userName}`
+        div(class="extension-description-div")
+          p=product.description
+        div(class="comments-img-div")
+          a(href=`/products/${product.id}`)
+            img(src="https://i.imgur.com/LAszFrl.png", alt="Comments" style="width:140px")
