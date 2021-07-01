@@ -1,31 +1,31 @@
 extends layout.pug
 block content
-  div
+  div(id="product-block")
     h1=product.name
-    div
-      div
+    div(class="product-content")
+      div(class="product-img")
         img(src=product.imgUrl class="productImg" alt="product image" style="width:100px")
-      div Extension Name
+      div(class="product-name") Extension Name
         p=product.productName
-      div Creator Username
+      div(class="creator-name") Creator Username
         p=product.User.userName
-      div Extension Description
+      div(class="ext-desc-name") Extension Description
         p=product.description
-    div
+    div(class="product-comment")
       form(method="post" action=`/products/${product.id}`)
         label(for="body")
         textarea(name="body" required)
         input(type="hidden" name="_csrf" value=csrfToken)
         button(type="submit") Comment
-    div
+    div(class="product-comments")
       each comment in comments
-        div
+        div(class="comment-author-img")
           img(src=comment.User.profileImg, alt="Profile Image")
-        div
+        div(class="comment-author-username")
           p=comment.User.userName
-        div
+        div(class="comment-body")
           p=comment.body
-        div
+        div(class="comment-createdat")
           p=comment.createdAt
 
 

@@ -1,20 +1,21 @@
 extends layout.pug
 block content
-            div
-                if errors
-                    div
-                        p The following error(s) occured:
-                        ul
-                            each error in errors
-                                li= error
-
-                form(action='/users/log-in' method='post')
-                    input(type='hidden' name='_csrf' value=csrfToken)
-                    div
-                        label(for='email') Email
-                        input(type='text' id='email' name='email' required)
-                    div
-                        label(for='password') Password
-                        input(type='text' id='password' name='password' required)
-                    div
-                        button(type='submit') Log-in
+    div(class="log-in-div")
+        div(id="log-in-errors")
+            if errors
+                div
+                    p The following error(s) occured:
+                    ul
+                        each error in errors
+                            li= error
+        div(id="log-in-form")
+            form(action='/users/log-in' method='post') Login
+                input(type='hidden' name='_csrf' value=csrfToken)
+                div
+                    label(for='email') Email
+                    input(type='text' id='email' name='email' required)
+                div
+                    label(for='password') Password
+                    input(type='text' id='password' name='password' required)
+                div
+                    button(type='submit' id="log-in-btn") Log-in
