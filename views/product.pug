@@ -1,36 +1,36 @@
 extends layout.pug
 block content
-  div(id="product-block")
-    h1=product.name
-    div(class="product-content")
-      div(class="product-img")
-        img(src=product.imgUrl class="productImg" alt="product image" style="width:100px")
-      div(class="product-name") Extension Name
+  div(id='regular-container')
+    div(id="product-block")
+      h1=product.name
+      div(id="product-image")
+        img(src=product.imgUrl class="productImg" alt="product image" style="width:225px")
+      div(id="product-name")
         p=product.productName
-      div(class="creator-name") Creator Username
+      div(id="creator-name")
         p=product.User.userName
-      div(class="ext-desc-name") Extension Description
+      div(id="ext-desc-name")
         p=product.description
-    div(class="product-comment")
-      div(class="comment-input-holder")
-        form(method="post" action=`/products/${product.id}`)
-          label(for="body")
-          textarea(name="body" required)
-          input(type="hidden" name="_csrf" value=csrfToken)
-          button(type="submit" id="comment-btn" class="comment-btn-div") Comment
-    div(class="product-comments")
-      each comment in comments
-        div(class="single-comment-div")
-          div(class="img-holder")
-            div(class="comment-author-img")
-              img(src=comment.User.profileImg, alt="Profile Image")
-          div(class="text-holder")
-            div(class="comment-author-username")
-              p=comment.User.userName
-            div(class="comment-body")
-              p=comment.body
-            div(class="comment-createdat")
-              p=comment.createdAt
+      div(class="product-comment")
+        div(class="comment-input-holder")
+          form(method="post" action=`/products/${product.id}`)
+            label(for="body")
+            textarea(name="body" required)
+            input(type="hidden" name="_csrf" value=csrfToken)
+            button(type="submit" id="comment-btn" class="comment-btn-div") Comment
+      div(class="product-comments")
+        each comment in comments
+          div(class="single-comment-div")
+            div(class="img-holder")
+              div(class="comment-author-img")
+                img(src=comment.User.profileImg, alt="Profile Image" width="100px")
+            div(class="text-holder")
+              div(class="comment-author-username")
+                p=comment.User.userName
+              div(class="comment-body")
+                p=comment.body
+              div(class="comment-createdat")
+                p=comment.createdAt
 
 
 
