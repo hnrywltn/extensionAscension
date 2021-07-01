@@ -16,3 +16,76 @@
 #profile-div ul:hover {
     color: black;
 }
+
+/* *******Submit Extension and Register Forms******* */
+
+.submit-form-div, .register-form-div {
+    background-image: url("https://tinyurl.com/ejm8hxx8");
+    padding: 20px;
+    background-repeat: no-repeat;
+    background-position: right;
+}
+
+#submit-form, #register-form {
+    display: flex;
+    justify-content: space-around;
+    position: relative;
+    box-sizing: border-box;
+    background-color: rgb(136, 245, 245);
+    padding: 20px;
+    border: 2px solid rgb(16, 16, 77);
+    border-radius: 5px;
+    width: 50%;
+    line-height: 30px;
+}
+
+#product-submit-btn, #register-btn, #log-in-btn {
+    border-radius: 5px;
+    font-size: 15px;
+    background-color: rgb(238, 206, 28);
+}
+
+#product-submit-btn:hover, #register-btn:hover, #log-in-btn:hover {
+    background-color: gold;
+    padding: 5px 15px;
+    font-size: 20px;
+    /* background-image: linear-gradient(to right, rbg(28, 110, 164) 0%, rgb(35, 136, 203) 50%, rgb(20, 78, 117) 100%); */
+}
+
+#submit-form input, #submit-form input select, #register-form input, #register-form input select {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 12px, 20px;
+    margin: 5px 0;
+    border-radius: 5px;
+}
+
+select {
+    border-radius: 5px;
+    padding: 5px;
+}
+
+#submit-form textarea, #register-form textarea {
+    overflow: auto;
+    width: 100%;
+    resize: none;
+    border-radius: 5px;
+    height: 75px;
+}
+
+/* *******Log-In Page******* */
+
+#log-in-form {
+    border: 2px solid rgb(16, 16, 77);
+    width: 400px;
+    height: 200px;
+    border-radius: 5px;
+    padding: 15px;
+    line-height: 40px;
+
+}
+#log-in-form label, #log-in-form form {
+    font-size: 30px;
+    /* padding: 15px; */
+
+}
