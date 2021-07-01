@@ -34,6 +34,7 @@ const restoreUser = async (req, res, next) => {
         res.locals.authenticated = true;
         res.locals.user = user;
         res.locals.imgUrl = user.profileImg;
+        res.locals.userId = user.id;
         console.log('HELLLLLLOOOOOOOO', res.locals);
         next();
       }
