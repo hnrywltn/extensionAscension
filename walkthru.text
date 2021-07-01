@@ -69,20 +69,19 @@ done //create login pug files
 done //create logout routes
 
 
-//create the demo user
+done //create the demo user
     //profile image
     //existing extensions
     //bio
     //hard-code info for a specific user (Alec's suggestion)
     //have a demo button that will link to the hard-coded user
 
-//error handler handling
+done //error handler handling
 
 done //seed the database with our ten selected extensions
 
 done //seed user database with user file
 
-//search functionality
 
 ////////Still To Do///////////
 
@@ -92,41 +91,52 @@ done //created nav bar in pug file
 
 done //create add product/extension routes
 
-//create delete product/extension routes
+done //create delete product/extension routes
 
 //complete styling
 
-//if possible, add up vote functionality (join table)
-
-//practice presenting! :)
 
 
 ////////////////AFTERNOON/////////////
 
 done //add demo to seeder file
 
-add products to demo user
+doneadd products to demo user
 
-product list page/ home page
+done product list page/ home page
 
 ??????????MAYBE????????????????
 
+//if possible, add up vote functionality (join table)
 Search Result Drop Down
+search functionality?!
 
-
-////////Presentation Points///////////
+//practice presenting! :)
 
 
 DAY 3:
-add comments to index.pug
-create /products/:id/comments route
-edit/delete for products and comments
 
-create profile.pug 
+done add comments to index.pug
+donce create /products/:id/comments route
+done delete for products and comments
+
+done create profile.pug
     list extensions posted by user
-    delete posts/comments
+    delete posts
 
-search functionality?!
+////////Presentation Points///////////
+
+dynamic user profile image for logged out or logged in user
+
+delete functionality for only the signed in user on their profile page
+
+
+
+
+
+//////////CURRENTLY NEEDED//////////////////////////
+
+need Alec help edit for products
 
 
 

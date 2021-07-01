@@ -106,7 +106,6 @@ router.get("/:id(\\d+)", csrfProtection, asyncHandler(async (req, res) => {
 
 router.post("/:id(\\d+)", csrfProtection, asyncHandler(async (req, res) => {
   const { body } = req.body;
-  // console.log(req.session.auth)
   const comment = Comment.build({
     body,
     userId: req.session.auth.userId,
@@ -116,6 +115,8 @@ router.post("/:id(\\d+)", csrfProtection, asyncHandler(async (req, res) => {
   res.redirect(`/products/${Number(req.params.id)}`)
 
 }));
+
+
 
 
 module.exports = router;
