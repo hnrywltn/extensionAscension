@@ -7,7 +7,6 @@ const { check, validationResult } = require('express-validator');
 
 
 router.get('/submit', csrfProtection, function (req, res, next) {
-  console.log(req.session)
   const userId = req.session.auth.userId
   res.render('submit-product', {
     title: 'Submit Extension',
