@@ -177,12 +177,18 @@ router.get(`/profile/:id(\\d+)`, csrfProtection, asyncHandler(async (req, res) =
   let signedIn = false;
 
   if(req.session.auth.userId && (req.session.auth.userId === Number(req.params.id))) signedIn = true;
-  res.render('profile', {
-    user,
-    products,
-    signedIn
-  })
+  if(signedIn) {
+    res.render('profile', {
+      user,
+      products,
+      signedIn
+    })
+  }
 }));
+
+router.get(`/profile/undefined`, (req, res) => {
+  res.redirect('/users/log-in');
+});
 
 /////////////////Edit Description///////////////////////////////////
 router.patch(`/product/:id(\\d+)`, asyncHandler(async(req,res) =>{
