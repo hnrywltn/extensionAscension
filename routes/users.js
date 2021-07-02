@@ -18,14 +18,37 @@ router.get('/log-in', csrfProtection, function(req, res, next) {
   });
 });
 
+
+
 const loginValidators = [
-  check('email')
+  check("email")
     .exists({ checkFalsy: true })
-    .withMessage('Please provide a value for Email Address'),
-  check('password')
+    .withMessage(
+      "You really thought you could log in without an email address?!"
+    )
+    .isEmail()
+    .withMessage("Please enter a valid email ya dolt."),
+  check("password")
     .exists({ checkFalsy: true })
-    .withMessage('Please provide a value for Password'),
+    .withMessage("You really thought you could log in without an password?!"),
 ];
+
+// const loginValidators = [
+//   check('email')
+//     .custom((email) => {
+//       return User.findOne({ where: { email } }).then((user) => {
+//         if (!user) return Promise.reject('login failed, please try again');
+//       })
+//     }),
+//   check('password')
+//     .custom((email) => {
+//       return User.findOne({ where: { email } }).then(async (user) => {
+//         const passwordMatch = await bcrypt.compare(password, user.password.toString());
+
+//         if (!passwordMatch) return Promise.reject('login failed, please try again');
+//       })
+//     }),
+// ];
 
 router.post('/log-in', csrfProtection, loginValidators, asyncHandler(async(req, res, next) => {
   const {
@@ -39,23 +62,27 @@ router.post('/log-in', csrfProtection, loginValidators, asyncHandler(async(req, 
 
   if(validatorErrors.isEmpty()) {
     const user = await User.findOne({ where: { email } });
+    console.log(user)
 
     if(user) {
       const passwordMatch = await bcrypt.compare(password, user.password.toString());
 
       if(passwordMatch) {
         loginUser(req, res, user);
+        return;
       }
     }
+    errors.push('Login failed for the provided email address and password');
+
   } else {
     errors = validatorErrors.array().map((error) => error.msg);
-    res.render('user-login', {
-      title: 'Login',
-      email,
-      errors,
-      csrfToken: req.csrfToken(),
-    });
   }
+  res.render('user-login', {
+    title: 'Login',
+    email,
+    errors,
+    csrfToken: req.csrfToken(),
+  });
 
 }));
 
