@@ -1,32 +1,34 @@
 extends layout.pug
 
 block content
-    div(id="profile-block")
-        div(id="profile-pic")
-            img(src= user.profileImg style="width:225px" )
-        div(id="user-name")
-            h1= user.name
-        div(id="at-user-name")
-            h2 @#{user.userName}
-        div(id="bio")
-            p=user.bio 
-    div
-        h3= Extensions
-        each product in products
+  div(id="profile-block-container")
+      div(id="profile-block")
+          div(id="profile-pic")
+              img(src= user.profileImg style="width:225px" )
+          div(id="user-name")
+              h1= user.name
+          div(id="at-user-name")
+              h2 @#{user.userName}
+          div(id="bio")
+              p=user.bio
+  div
+      h3= Extensions
+      each product in products
+        div(id='prod-container-div')
           div(id=`product-div-${product.id}` class="product-div")
             div(class="product-img")
-              img(src=product.imgUrl  alt="product image" style="width:175px")
-            div(class="extension-name") 
+              img(src=product.imgUrl  alt="product image" style="width:200px")
+            div(class="extension-name")
               p=product.productName
-            div(class="creator-name") 
+            div(class="creator-name")
               p=user.userName
-            div(class="extension-description") 
+            div(class="extension-description")
               p(id=`description-container-${product.id}`)=product.description
             div(class="delete-div")
               if signedIn
                 form(action=`/users/product/${product.id}` method="post")
-                  button(type="submit" class="delete") DELETE PRODUCT 
+                  button(type="submit" class="delete") DELETE PRODUCT
             div(class="text-area")
-              textarea(id=`edit-body-${product.id}`, cols="50", rows="5") 
+              textarea(id=`edit-body-${product.id}`, cols="50", rows="5" placeholder="Enter new description here.")
             div(class="div-edit")
               button(class="edit-button" id=`edit-button-${product.id}`) EDIT DESCRIPTION
