@@ -17,4 +17,8 @@ router.get('/', asyncHandler (async(req, res, next) => {
   });
 }));
 
+router.get('/progress', (req, res) => {
+  res.render('progress');
+})
+
 module.exports = router;

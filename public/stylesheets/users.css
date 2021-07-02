@@ -7,6 +7,22 @@ nav {
     /* position: fixed; */
 }
 
+.progressBOD {
+    display: flex;
+}
+
+#progress {
+    /* background-color: darkorchid; */
+    width: 50%;
+    min-height: 30%;
+    color: white;
+    font-size: 40px;
+}
+
+#progressP {
+    color: white;
+}
+
 .product-div {
     display: grid;
     grid-column-start: 1;
