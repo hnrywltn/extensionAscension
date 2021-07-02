@@ -123,6 +123,59 @@ nav {
     padding-left: 20px;
     align-self: center;
 }
+
+#pc {
+    grid-column: 1 / span end;
+    grid-row: 5 / span end;
+}
+
+.single-comment-div {
+    border: black solid 1px;
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    grid-template-rows: 2fr 1fr;
+    margin: 5px;
+    border-radius: 5px;
+    border-color: gray;
+}
+
+.comment-author-username {
+    padding-left: 15px;
+    grid-row: 2 / span 1;
+}
+
+.comment-body {
+    font-size: 30px;
+    padding-left: 15px;
+}
+
+.comment-createdat {
+    padding-left: 15px;
+    font-size: 10px;
+    align-self: flex-end;
+}
+
+.img-holder {
+    padding-top: 15px;
+    padding-left: 15px;
+}
+
+#please{
+    grid-column: 1 / span end;
+}
+
+#please textarea{
+    width: 100%;
+    height: 100px;
+    overflow: auto;
+    resize: none;
+    border-radius: 5px;
+}
+
+#comment-btn {
+    margin: 10px 0;
+}
+
 /*
 [] move delete button
 */
