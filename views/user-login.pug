@@ -3,11 +3,11 @@ block content
     div(id="log-in-div")
         div(id="log-in-errors")
             if errors
-                div
+                div(class="errors-div-test")
                     p The following error(s) occured:
                     ul
                         each error in errors
-                            li= error
+                            li(class="errors-li")= error
         div(id="log-in-form" class="log-in-form")
             form(action='/users/log-in' method='post')
                 input(type='hidden' name='_csrf' value=csrfToken)

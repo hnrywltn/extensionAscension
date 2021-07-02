@@ -195,3 +195,15 @@ nav {
 /*
 [] move delete button
 */
+
+.errors-div-test{
+    color: red;
+    background-color: white;
+    border: black solid 3px;
+    padding: 30px;
+    border-radius: 5px;
+}
+
+.errors-li{
+    margin: 20px;
+}
